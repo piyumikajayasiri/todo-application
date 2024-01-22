@@ -35,7 +35,8 @@ export default function App() {
       <h1 className="header">Todo List</h1>
       <ul className="list">
         {todo.map((todo) => (
-          <li key={todo.id}>
+          <li key={todo.id}> 
+          //adding key to stop getting errors 
             <label>
               <input type="checkbox" checked={todo.completed} />
               {todo.title}
@@ -46,4 +47,6 @@ export default function App() {
       </ul>
     </>
   );
+
 }
+
