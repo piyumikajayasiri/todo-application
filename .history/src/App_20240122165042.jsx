@@ -8,7 +8,6 @@ export default function App() {
   {/* when we want to change input in the code we have to refresh the code 
 but using state we can rerender the same code again without refreshing
 newItem => current state , setNewItem => updated State
-
 */}
 
   function handleSubmit(e) {

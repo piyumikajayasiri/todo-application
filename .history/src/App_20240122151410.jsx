@@ -5,12 +5,6 @@ export default function App() {
   const [newItem, setNewItem] = useState("");
   const [todo, setTodo] = useState([]);
 
-  {/* when we want to change input in the code we have to refresh the code 
-but using state we can rerender the same code again without refreshing
-newItem => current state , setNewItem => updated State
-
-*/}
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -44,7 +38,6 @@ newItem => current state , setNewItem => updated State
   return (
     <>
       <form className="new-item-form" onSubmit={handleSubmit}>
-        {/* Here we use the use state newItem is the constant and setNewItem is for the function*/}
         <div className="form-row">
           <label htmlFor="item">New Item</label>
           <input
@@ -69,8 +62,7 @@ newItem => current state , setNewItem => updated State
             currently checked or not (Create a function for this)*/}
               {todo.title}
             </label>
-            <button className="btn btn-danger"
-            onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <button className="btn btn-danger">Delete</button>
           </li>
         ))}
       </ul>

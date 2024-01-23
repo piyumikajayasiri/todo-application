@@ -6,10 +6,7 @@ export default function App() {
   const [todo, setTodo] = useState([]);
 
   {/* when we want to change input in the code we have to refresh the code 
-but using state we can rerender the same code again without refreshing
-newItem => current state , setNewItem => updated State
-
-*/}
+but using state we can rerender the same code again without refreshing*/}
 
   function handleSubmit(e) {
     e.preventDefault();
