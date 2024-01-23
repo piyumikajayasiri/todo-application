@@ -5,12 +5,6 @@ export default function App() {
   const [newItem, setNewItem] = useState("");
   const [todo, setTodo] = useState([]);
 
-  {/* when we want to change input in the code we have to refresh the code 
-but using state we can rerender the same code again without refreshing
-newItem => current state , setNewItem => updated State
-
-*/}
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -22,29 +16,9 @@ newItem => current state , setNewItem => updated State
     setNewItem("");
   }
 
-
-  function toggleTodo(id, completed){
-    setTodo(currentTodo => {
-      return currentTodo.map(todo => {
-        if (todo.id === id){
-          return {...todo, completed}
-        }
-
-        return todo
-      })
-    })
-  }
-
-  function deleteTodo(id){
-    setTodo(currentTodo => {
-      return currentTodo.filter(todo => todo.id !== id)
-    })
-  }
-
   return (
     <>
       <form className="new-item-form" onSubmit={handleSubmit}>
-        {/* Here we use the use state newItem is the constant and setNewItem is for the function*/}
         <div className="form-row">
           <label htmlFor="item">New Item</label>
           <input
@@ -66,11 +40,10 @@ newItem => current state , setNewItem => updated State
               <input type="checkbox" checked={todo.completed} 
               onChange={e => toggleTodo(todo.id, e.target.checked)} 
               />{/*by adding toggle to do we can check if the check box is 
-            currently checked or not (Create a function for this)*/}
+            currently checked or not */}
               {todo.title}
             </label>
-            <button className="btn btn-danger"
-            onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <button className="btn btn-danger">Delete</button>
           </li>
         ))}
       </ul>
